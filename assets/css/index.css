@@ -1,0 +1,434 @@
+/* Custom properties */
+:root {
+  --color-background: 0 0% 10%;
+  --color-foreground: 0 0% 98%;
+  --color-card: 0 0% 13%;
+  --color-card-foreground: 0 0% 98%;
+  --color-primary: 54 100% 51%;
+  --color-primary-foreground: 0 0% 0%;
+  --color-secondary: 0 0% 16%;
+  --color-secondary-foreground: 0 0% 98%;
+  --color-muted: 0 0% 16%;
+  --color-muted-foreground: 0 0% 64%;
+  --color-accent: 54 100% 51%;
+  --color-accent-foreground: 0 0% 0%;
+  --color-destructive: 0 62.8% 30.6%;
+  --color-destructive-foreground: 0 0% 98%;
+  --color-border: 0 0% 20%;
+  --color-input: 0 0% 16%;
+  --color-ring: 0 0% 16%;
+  --color-cta: 0 100% 51%;
+  --color-cta-foreground: 0 0% 100%;
+  --border-radius: 0.5rem;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(var(--color-background));
+  color: hsl(var(--color-foreground));
+  line-height: 1.5;
+}
+
+.main {
+  background-color: hsl(var(--color-background));
+}
+
+/* Layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* ==================== Hero section ==================== */
+.hero {
+  text-align: center;
+  padding: 96px 0 0 0 !important;
+}
+
+.hero__logo {
+  max-width: 120px;
+  margin-bottom: 2rem;
+}
+
+.hero__subtitle {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  font-weight: 300;
+  color: hsl(var(--color-muted-foreground));
+}
+
+.hero__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 600;
+  color: hsl(var(--color-primary));
+}
+
+.hero__text {
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+/* Sponsor logos in the hero section */
+.hero__sponsors {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 32px;
+  height: 20px;
+}
+
+/* ==================== Button styles ==================== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  background-color: #ff3333;
+  color: hsl(var(--color-cta-foreground));
+}
+
+.button:hover {
+  background-color: #ff3333cc;
+}
+
+/* ==================== Section styles ==================== */
+.section {
+  padding: 96px 0;
+}
+
+.section__subtitle {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: hsl(var(--color-muted-foreground));
+}
+
+/* ==================== Featured Section ==================== */
+.featured {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.featured__video-wrapper {
+  margin: 0 1rem;
+}
+
+/* ==================== Schedule Section ==================== */
+#schedule {
+  padding: 82px 0 96px 0 !important;
+}
+
+/* ==================== Highlights Section ==================== */
+#highlights {
+  padding: 82px 0 96px 0 !important;
+  margin-bottom: 0;
+}
+
+/* ==================== Schedule and Highlights grid ==================== */
+.schedule__grid,
+.highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+  margin-top: 2rem;
+}
+
+/* ==================== Schedule and Highlights cards ==================== */
+.schedule__card,
+.highlights__card {
+  background-color: hsl(var(--color-card));
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: 1px solid hsl(var(--color-border));
+}
+
+/* Hover effect for cards */
+.schedule__card:hover,
+.highlights__card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.schedule__card-image {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.schedule__card-content,
+.highlights__card-content {
+  padding-bottom: 16px;
+}
+
+.schedule__card-content {
+  padding-top: 12px;
+}
+
+.schedule__card-matchup,
+.highlights__card-matchup {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--color-foreground));
+  text-align: center;
+}
+
+.schedule__card-time,
+.highlights__card-type {
+  text-align: center;
+  color: hsl(var(--color-muted-foreground));
+  font-weight: 300;
+}
+
+/* ==================== Call to Action section ==================== */
+.call-to-action {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: hsl(var(--color-foreground));
+  text-align: center;
+  padding: 82px 0 96px 0;
+  margin: 0 !important;
+}
+
+/* Different background images for each CTA section */
+.call-to-action--first {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/cta/cta-1.webp");
+  margin-bottom: 72px;
+}
+
+.call-to-action--second {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/cta/cta-2.webp");
+  margin-bottom: 72px;
+}
+
+.call-to-action--third {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)),
+    url("../img/cta/cta-3.webp");
+}
+
+.call-to-action__subtitle {
+  font-family: "Caveat", cursive;
+  font-size: 2rem;
+  font-weight: 400;
+  color: hsl(var(--color-muted-foreground));
+}
+
+.call-to-action__title {
+  font-family: "Poppins", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  color: hsl(var(--color-primary));
+}
+
+.call-to-action__text {
+  font-family: "Caveat", cursive;
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+/* ==================== Video wrapper for highlights and featured ==================== */
+.highlights__video-wrapper,
+.featured__video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 aspect ratio */
+  height: 0;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+
+.highlights__video-wrapper iframe,
+.featured__video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+.highlights {
+  margin-bottom: 96px;
+}
+
+.schedule .section__subtitle,
+.highlights .section__subtitle {
+  margin-bottom: -16px;
+}
+
+/* ==================== Map section ==================== */
+.map {
+  padding: 82px 0 96px 0 !important;
+}
+
+.map__wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.map__wrapper iframe {
+  border-radius: 10px;
+  border: none;
+}
+
+.map__social-subtitle {
+  margin-top: 8px;
+}
+
+.map__social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.map__social-link {
+  color: hsl(var(--color-foreground));
+  transition: color 0.2s ease;
+}
+
+.map__social-link:hover {
+  color: hsl(var(--color-primary));
+}
+
+/* ==================== Footer styles ==================== */
+.footer {
+  padding-bottom: 24px;
+}
+
+.footer__text {
+  text-align: center;
+}
+
+.footer__link {
+  color: #ffe605;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* ==================== Media queries for responsiveness ==================== */
+@media (max-width: 1024px) {
+  .hero__title,
+  .call-to-action__title {
+    font-size: 40px;
+  }
+
+  .hero__subtitle,
+  .call-to-action__subtitle,
+  .section__subtitle {
+    font-size: 1.8rem;
+  }
+
+  .hero__text,
+  .call-to-action__text {
+    font-size: 18px;
+  }
+
+  .schedule__grid,
+  .highlights__grid {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hero__title,
+  .call-to-action__title {
+    font-size: 36px;
+    margin-bottom: 2px;
+  }
+
+  .hero__subtitle,
+  .call-to-action__subtitle,
+  .section__subtitle {
+    font-size: 1.6rem;
+  }
+
+  .hero__text,
+  .call-to-action__text,
+  .schedule__card-matchup,
+  .highlights__card-matchup,
+  .schedule__card-time,
+  .highlights__card-type {
+    font-size: 18px;
+  }
+
+  .button {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .hero,
+  .section,
+  .call-to-action {
+    padding: 6rem 0;
+  }
+
+  .hero__sponsors {
+    height: 16px;
+    margin-top: 24px;
+  }
+
+  .hero__title,
+  .call-to-action__title {
+    font-size: 28px;
+  }
+
+  .hero__subtitle,
+  .call-to-action__subtitle,
+  .section__subtitle {
+    font-size: 24px;
+  }
+
+  .schedule__card-matchup,
+  .highlights__card-matchup,
+  .schedule__card-time,
+  .highlights__card-type {
+    font-size: 14px;
+  }
+
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+  }
+
+  .schedule__grid,
+  .highlights__grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
+
+  .footer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 380px) {
+  .call-to-action {
+    background-size: auto;
+  }
+}
